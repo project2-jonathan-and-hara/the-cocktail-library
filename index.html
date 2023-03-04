@@ -1,1 +1,45 @@
-this is index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/sass/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class='wrapper'>
+        <h1>The Cocktail Library</h1>
+        <p>Click below to select your preffered spirit & stir for the recipe!</p>
+        <label for="spirits"></label>
+        <select name="spirit-selection" id="spirits">
+            <option value="">Select Spirits</option>
+            <option value="vodka">Vodka</option>
+            <option value="gin">Gin</option>
+            <option value="tequila">Tequila</option>
+            <option value="rum">Rum</option>
+        </select>
+        <button>Stir!</button>
+    </header>
+    <main class='wrapper'>
+        <ul class='gallery'>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+            <li><img src="./assets/9179i01503565212.jpg" alt=""></li>
+        </ul>
+        <button>Restart</button>
+        <div>
+            <div class='cocktail-img'>
+                <img src="./assets/mql55h1643820632.jpg" alt="">
+            </div>
+            <div class='recipe'></div>
+        </div>
+    </main>
+</body>
+</html>
