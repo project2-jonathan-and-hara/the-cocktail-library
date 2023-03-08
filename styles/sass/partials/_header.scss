@@ -4,7 +4,6 @@ header{
 
 }
 .header-content{
-    // border:2px solid tomato;
     padding-left:.8em ;
     position: absolute;
     padding-top: 1em;
@@ -12,8 +11,7 @@ header{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    // position: relative;
-    // transform: translateY(-50%);
+
     
 }
 .header-text p{
@@ -34,17 +32,4 @@ header{
         padding: 0;
     }
     
-}
-.gallery{
-    margin-top: 1em;
-    display: flex;
-    // border:2px solid tomato;
-    justify-content: center;
-    gap: 5px;
-
-    li{
-        // border: 2px solid tomato;
-        width: calc(100% / 2 - 3px);
-    }
-    flex-wrap: wrap;
 }
