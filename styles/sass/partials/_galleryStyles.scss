@@ -1,0 +1,12 @@
+.gallery {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    li {
+        width: calc(100% / 2 - 3px);
+    }
+
+    flex-wrap: wrap;
+}

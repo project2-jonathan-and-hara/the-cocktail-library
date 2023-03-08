@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+body{
+
+    font-family:$primary-font ;
+    font-weight: 400;
+}
+
+// h1
+h1{
+    
+    font-family:$secondary-font ;
+    font-size: clamp(1.2rem, -0.7143rem + 8.5714vw, 2.5rem);
+    font-weight:400;
+    margin: 0;
+}
+
+// p
+
