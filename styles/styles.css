@@ -44,7 +44,8 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b, strong {
@@ -214,7 +215,8 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -256,6 +258,17 @@ h1 {
   margin: 0;
 }
 
+.gallery {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.gallery li {
+  width: calc(50% - 3px);
+}
+
 header {
   position: relative;
   padding-top: 1em;
@@ -289,14 +302,3 @@ header {
   width: 25%;
   padding: 0;
 }
-
-.gallery {
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-.gallery li {
-  width: calc(50% - 3px);
-}/*# sourceMappingURL=styles.css.map */
