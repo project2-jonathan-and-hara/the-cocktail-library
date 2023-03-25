@@ -245,41 +245,69 @@ ul {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: "Hind", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  background-color: #DCE6EC;
+  height: 100vh;
 }
 
 h1 {
   font-family: "Poppins", sans-serif;
   font-size: clamp(1.2rem, -0.7143rem + 8.5714vw, 2.5rem);
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
 }
 
+#spirits {
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+}
+
 .gallery {
-  margin-top: 1em;
+  margin-bottom: 50px;
+}
+.gallery li {
+  text-align: center;
+}
+
+.gallery {
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   gap: 5px;
   flex-wrap: wrap;
 }
 .gallery li {
-  border: 1px solid black;
   width: calc(50% - 3px);
+  border: 5px solid #9AB6C3;
 }
 
-.recipeIngredients {
-  display: flex;
+.recipe-card {
+  display: none;
   flex-direction: column;
-  border: 2px solid tomato;
+  margin: 1em, 0;
+  box-shadow: 0px 0px 5px 5px #9AB6C3;
+  background-color: white;
 }
-.recipeIngredients li {
+.recipe-card .cocktail-img {
+  max-width: 80%;
+  align-self: center;
+  margin-bottom: 20px;
+  padding-top: 1.5em;
+}
+.recipe-card .recipe {
+  align-self: center;
+  width: 80%;
+}
+.recipe-card .recipe li {
   margin-right: 10px;
 }
-
 header {
   position: relative;
+  top: 200px;
   padding-top: 1em;
+  box-shadow: 0px 0px 5px 5px #9AB6C3;
 }
 
 .header-content {
@@ -289,11 +317,12 @@ header {
   top: 5%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: center;
 }
 
 .header-text p {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
+  width: 60%;
 }
 
 .header-selection {
@@ -301,12 +330,30 @@ header {
   flex-direction: column;
 }
 .header-selection select {
-  width: 40%;
+  width: 30%;
   font-size: 0.8rem;
 }
-.header-selection button {
+.header-selection button, .header-selection button:focus {
   margin-top: 0.6em;
   font-size: 0.8rem;
-  width: 25%;
-  padding: 0;
+  width: 20%;
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: #ebee93;
+}
+
+footer {
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  margin-top: 50px;
+}
+footer a {
+  text-decoration: none;
+  color: #000000;
 }
