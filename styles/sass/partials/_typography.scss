@@ -1,19 +1,33 @@
 @use 'variables' as *;
 
 body{
-
-    font-family:$primary-font ;
-    font-weight: 400;
+        font-family:$primary-font;
+        font-weight: 500;
+        font-size: 0.8rem;
+        background-color: #DCE6EC;
+        height: 100vh;
 }
 
 // h1
 h1{
     
-    font-family:$secondary-font ;
+    font-family:$secondary-font;
     font-size: clamp(1.2rem, -0.7143rem + 8.5714vw, 2.5rem);
-    font-weight:400;
+    font-weight:600;
     margin: 0;
 }
 
-// p
+#spirits{
+    font-family: $primary-font;
+    font-weight: 400;
+
+}
+
+// gallery 
+.gallery{
+    margin-bottom: 50px;
+    li{
+        text-align: center;
+    }
+}
 
