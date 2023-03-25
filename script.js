@@ -14,14 +14,22 @@ app.init = () => {
 
     //declare a variable to capture the users preferred spirit selection
     app.spiritName;
+
+    app.recipeCard = document.querySelector('.recipe-card');
+
+    app.header = document.querySelector('header');
+
+    app.footer = document.querySelector('footer');
+    
     // target the select element & use addEventListener to update with the users spirit selection 
     app.userSelection = document.querySelector('select');
     app.userSelection.addEventListener('click', (e) => {
         app.spiritName = e.target.innerText;
-
         // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
         app.stirBtn = document.querySelector('.stirBtn');
         app.stirBtn.addEventListener('click', (e) => {
+            app.header.style.top = '0';
+            app.footer.style.position = 'relative';
             if (app.spiritName != 'Select') {
                 // reset page for new cocktail selection
                 app.cocktailImg.innerHTML = '';
@@ -98,6 +106,7 @@ app.getRecipe = (idDrink) => {
     // reset the selected cocktail
     app.cocktailImg.innerHTML = '';
     app.cocktailRecipe.innerHTML = '';
+    app.recipeCard.style.display = 'flex';
     const url = new URL(app.apiRecipeUrl);
     url.search = new URLSearchParams({
         'i': idDrink
@@ -114,6 +123,8 @@ app.getRecipe = (idDrink) => {
             console.log(idResult.drinks[0]);
             const cktlObj = idResult.drinks[0];
             const recipeUl = document.createElement('ul');
+            const instructions = document.createElement('p');
+            instructions.innerText = cktlObj['strInstructions']
             // create a for loop to iterate over the object and print the ingredients, measurements and instructions
             for (let i = 1; i < 16; i++) {
                 // create a li element in the DOM for the recipe list 
@@ -130,11 +141,8 @@ app.getRecipe = (idDrink) => {
                 recipeUl.appendChild(recipeList);
             }
             app.cocktailRecipe.appendChild(recipeUl);
+            app.cocktailRecipe.appendChild(instructions);
         })
-    // strIngredient- ingredient
-    // strInstructions - steps
-    // strMeasure - quantities
-
 }
 
 
