@@ -2,15 +2,20 @@
 
 const app = {}
 // const ul = document.querySelector('.gallery');
-
-
 //create the init method to define global variables & capture user interaction with select & button elements 
+
+
+
+
 
 app.init = () => {
     // third party API with cocktail recipe data used for app
     // www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
     app.apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php';
     app.apiRecipeUrl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?';
+
+    // declare variable to reset the select option on page reload
+    app.selectReset = document.getElementById("spirits");
 
     //declare a variable to capture the users preferred spirit selection
     app.spiritName;
@@ -28,6 +33,7 @@ app.init = () => {
         // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
         app.stirBtn = document.querySelector('.stirBtn');
         app.stirBtn.addEventListener('click', (e) => {
+            app.recipeCard.style.display = 'none';
             app.header.style.top = '0';
             app.footer.style.position = 'relative';
             if (app.spiritName != 'Select') {
@@ -42,10 +48,13 @@ app.init = () => {
             //defining a variable to reference the ul with a class of gallery
             app.ulElement = document.querySelector('.gallery');
         })
+        e.stopPropagation();
     });
 
     app.cocktailImg = document.querySelector('.cocktail-img');
     app.cocktailRecipe = document.querySelector('.recipe');
+    app.selectReset.selectedIndex = 0;
+
 
 }
 
@@ -93,9 +102,10 @@ app.displayImages = (drinksArray) => {
 
     // add event listener to the cocktail image for the user to get recipe on a click event
     app.ulElement.childNodes.forEach(liElement => {
-        liElement.addEventListener('click', () => {
+        liElement.addEventListener('click', (e) => {
             let idDrink = liElement.getAttribute('id');
             app.getRecipe(idDrink);
+            e.stopPropagation();
         });
     })
 
