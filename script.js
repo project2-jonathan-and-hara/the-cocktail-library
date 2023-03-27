@@ -1,7 +1,8 @@
 // create the app object 
-
 const app = {}
+
 // const ul = document.querySelector('.gallery');
+
 //create the init method to define global variables & capture user interaction with select & button elements 
 
 app.init = () => {
@@ -25,11 +26,11 @@ app.init = () => {
     // target the select element & use addEventListener to update with the users spirit selection 
     app.userSelection = document.querySelector('select');
     app.userSelection.addEventListener('click', (e) => {
-        app.spiritName = e.target.innerText;
+    app.spiritName = e.target.innerText;
         // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
         app.stirBtn = document.querySelector('.stirBtn');
         app.stirBtn.addEventListener('click', (e) => {
-        //  window.scrollTo(0,app.header.clientHeight). ******** 
+         window.scrollTo(0,app.header.clientHeight)
             app.recipeCard.style.display = 'none';
             app.header.style.top = '0';
             app.footer.style.position = 'relative';
@@ -39,9 +40,8 @@ app.init = () => {
                 app.cocktailRecipe.innerHTML = '';
                 app.getCocktails();
             }
-            // target the ul element in the DOM to create a gallery with 6 cocktail options for the user
+            // target the ul element in the DOM to create a gallery with 6 cocktail options for the user                         
             app.gallery = document.querySelector('.gallery');
-
             //defining a variable to reference the ul with a class of gallery
             app.ulElement = document.querySelector('.gallery');
         })
@@ -93,6 +93,7 @@ app.displayImages = (drinksArray) => {
         listItem.appendChild(image);
         listItem.appendChild(text);
         app.gallery.appendChild(listItem);
+        
     };
         // window.scrollTo(0,app.header.clientHeight)**********
 
@@ -104,7 +105,6 @@ app.displayImages = (drinksArray) => {
             e.stopPropagation();
         });
     })
-
 }
 
 // declaring app.getRecipe method to fetch the cocktail recipe for the user
@@ -151,9 +151,7 @@ app.getRecipe = (idDrink) => {
         })
 }
 
-
-
-
+                       
 
 // call the init method to initiate the app
 app.init();
