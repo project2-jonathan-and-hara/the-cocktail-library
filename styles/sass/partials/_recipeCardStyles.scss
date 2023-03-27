@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+.recipe-card {
+    display: none;
+    flex-direction: column;
+    margin: 1em, 0;
+    box-shadow: 0px 0px 3px 5px #DCE6EC;
+    background-color: #C1D3DC;
+
+    .cocktail-img {
+        max-width: 80%;
+        align-self: center;
+        margin-bottom: 20px;
+        padding-top: 1.5em;
+    }
+
+    .recipe {
+        align-self: center;
+        width: 80%;
+        li {
+            margin-right: 10px;
+        }
+    }
+}

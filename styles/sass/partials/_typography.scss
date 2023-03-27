@@ -4,32 +4,19 @@ body{
         font-family:$primary-font;
         font-weight: 500;
         font-size: 0.8rem;
-        background-color: #DCE6EC;
+        background-color: #9AB6C3;
         height: 100vh;
 }
 
-// h1
 h1{
-    
     font-family:$secondary-font;
     font-size: clamp(1.2rem, -0.7143rem + 8.5714vw, 2.5rem);
     font-weight:600;
     margin: 0;
 }
 
-#spirits{
-    font-family: $primary-font;
-    font-weight: 400;
 
-}
 
-// gallery 
-.gallery{
-    margin-bottom: 50px;
-    li{
-        text-align: center;
-    }
-}
 
 
 
