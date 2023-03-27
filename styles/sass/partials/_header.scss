@@ -3,7 +3,7 @@
 header{
     position: relative;
     top: 200px;
-    box-shadow: 0px 0px 5px 5px #9AB6C3;
+    box-shadow: 0px 0px 3px 5px #DCE6EC;
 }
 .header-content{
     padding-left:.8em ;
@@ -15,9 +15,9 @@ header{
     justify-content: center;
 }
 .header-text p{
-    font-size: .875rem;
+    font-size: .8rem;
     width: 60%;
-
+    margin-top:2px;
 }
 .header-selection{
     display:flex;
@@ -26,17 +26,31 @@ header{
         width: 30%;
         font-size:.8rem;
     }
-    button,button:focus{
-        margin-top: .6em;
-        font-size: .8rem;
+    button{
+        margin-top:.5em;
+        padding-top: .2em;
+        font-size:.8rem;
         width: 20%;
         font-family: $primary-font;
         font-weight: 400;
-        border-radius: 5px;
-        background-color: $btn-clr;
+        background-color:#f5f5f5;
+        //#c9c8c8
+    }
+    .stirBtn:hover{
+        background-color: #d4edaf;
+    }
+    .stirBtn:focus-visible{
+        outline-color: #0202e9;
+        outline-style: solid;
+    }
+    .stirBtn:active{
+        background-color: #acd671;
+        transform: translate(4px);
+    }
+    .spirits {
+        font-family: $primary-font;
+        font-weight: 400;
+        text-align: center;
+        background-color: #f5f5f5;
     }
 }
-
-
-
-

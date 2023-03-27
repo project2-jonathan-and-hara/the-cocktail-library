@@ -225,6 +225,7 @@ html {
   padding: 0;
   text-decoration: none;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -248,7 +249,7 @@ body {
   font-family: "Hind", sans-serif;
   font-weight: 500;
   font-size: 0.8rem;
-  background-color: #DCE6EC;
+  background-color: #9AB6C3;
   height: 100vh;
 }
 
@@ -259,20 +260,9 @@ h1 {
   margin: 0;
 }
 
-#spirits {
-  font-family: "Hind", sans-serif;
-  font-weight: 400;
-}
-
-.gallery {
-  margin-bottom: 50px;
-}
-.gallery li {
-  text-align: center;
-}
-
 .gallery {
   margin-top: 2em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -280,33 +270,15 @@ h1 {
 }
 .gallery li {
   width: calc(50% - 3px);
-  border: 5px solid #9AB6C3;
+  text-align: center;
+  border: 5px solid #DCE6EC;
+  background-color: #C1D3DC;
 }
 
-.recipe-card {
-  display: none;
-  flex-direction: column;
-  margin: 1em, 0;
-  box-shadow: 0px 0px 5px 5px #9AB6C3;
-  background-color: white;
-}
-.recipe-card .cocktail-img {
-  max-width: 80%;
-  align-self: center;
-  margin-bottom: 20px;
-  padding-top: 1.5em;
-}
-.recipe-card .recipe {
-  align-self: center;
-  width: 80%;
-}
-.recipe-card .recipe li {
-  margin-right: 10px;
-}
 header {
   position: relative;
   top: 200px;
-  box-shadow: 0px 0px 5px 5px #9AB6C3;
+  box-shadow: 0px 0px 3px 5px #DCE6EC;
 }
 
 .header-content {
@@ -320,8 +292,9 @@ header {
 }
 
 .header-text p {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   width: 60%;
+  margin-top: 2px;
 }
 
 .header-selection {
@@ -332,14 +305,31 @@ header {
   width: 30%;
   font-size: 0.8rem;
 }
-.header-selection button, .header-selection button:focus {
-  margin-top: 0.6em;
+.header-selection button {
+  margin-top: 0.5em;
+  padding-top: 0.2em;
   font-size: 0.8rem;
   width: 20%;
   font-family: "Hind", sans-serif;
   font-weight: 400;
-  border-radius: 5px;
-  background-color: #ebee93;
+  background-color: #f5f5f5;
+}
+.header-selection .stirBtn:hover {
+  background-color: #d4edaf;
+}
+.header-selection .stirBtn:focus-visible {
+  outline-color: #0202e9;
+  outline-style: solid;
+}
+.header-selection .stirBtn:active {
+  background-color: #acd671;
+  transform: translate(4px);
+}
+.header-selection .spirits {
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  background-color: #f5f5f5;
 }
 
 footer {
@@ -355,4 +345,25 @@ footer {
 footer a {
   text-decoration: none;
   color: #000000;
+}
+
+.recipe-card {
+  display: none;
+  flex-direction: column;
+  margin: 1em, 0;
+  box-shadow: 0px 0px 3px 5px #DCE6EC;
+  background-color: #C1D3DC;
+}
+.recipe-card .cocktail-img {
+  max-width: 80%;
+  align-self: center;
+  margin-bottom: 20px;
+  padding-top: 1.5em;
+}
+.recipe-card .recipe {
+  align-self: center;
+  width: 80%;
+}
+.recipe-card .recipe li {
+  margin-right: 10px;
 }
