@@ -28,9 +28,17 @@ app.init = () => {
     app.userSelection.addEventListener('click', (e) => {
     app.spiritName = e.target.innerText;
         // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
+
+        e.stopPropagation();
+    });
+
+    app.cocktailImg = document.querySelector('.cocktail-img');
+    app.cocktailRecipe = document.querySelector('.recipe');
+    app.selectReset.selectedIndex = 0;
+
         app.stirBtn = document.querySelector('.stirBtn');
         app.stirBtn.addEventListener('click', (e) => {
-         window.scrollTo(0,app.header.clientHeight)
+        window.scrollTo(0,app.header.clientHeight)
             app.recipeCard.style.display = 'none';
             app.header.style.top = '0';
             app.footer.style.position = 'relative';
@@ -44,25 +52,26 @@ app.init = () => {
             app.gallery = document.querySelector('.gallery');
             //defining a variable to reference the ul with a class of gallery
             app.ulElement = document.querySelector('.gallery');
-        })
-        e.stopPropagation();
-    });
 
-    app.cocktailImg = document.querySelector('.cocktail-img');
-    app.cocktailRecipe = document.querySelector('.recipe');
-    app.selectReset.selectedIndex = 0;
+            e.stopPropagation();
+        })
 }
+
+
+
+
 
 // declare a getCocketails method & use AJAX method to obtain the cocktails data from the third party API
 
 app.getCocktails = () => {
+    console.log('get cocktails called');
     const url = new URL(app.apiUrl);
     url.search = new URLSearchParams({
         'i': app.spiritName
     });
     fetch(url)
         .then(response => {
-            return response.json()
+            return response.json();
         })
         .then(drinksResult => {
             // console.log(drinksResult);
@@ -74,7 +83,7 @@ app.getCocktails = () => {
 // created a displayImage method to populate an image gallery of cocktails & their names for the users selection
 
 app.displayImages = (drinksArray) => {
-    
+    console.log('display images called');
     // reset the gallery 
     app.gallery.innerHTML = '';
 

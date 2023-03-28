@@ -265,20 +265,20 @@ h1 {
   margin-bottom: 2em;
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 .gallery li {
-  width: calc(50% - 3px);
+  width: calc(50% - 8px);
   text-align: center;
-  border: 5px solid #DCE6EC;
-  background-color: #C1D3DC;
+  border: 5px solid #ffffff;
+  background-color: #DCE6EC;
 }
 
 header {
   position: relative;
   top: 200px;
-  box-shadow: 0px 0px 3px 5px #DCE6EC;
+  box-shadow: 0px 0px 0px 5px #ffffff;
 }
 
 .header-content {
@@ -318,8 +318,7 @@ header {
   background-color: #d8ecba;
 }
 .header-selection .stirBtn:focus-visible {
-  outline-color: #0202e9;
-  outline-style: solid;
+  border: 2px solid blue;
 }
 .header-selection .stirBtn:active {
   background-color: #acd671;
@@ -334,7 +333,7 @@ header {
 
 footer {
   font-family: "Hind", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   padding: 5px 0;
   width: 100%;
   text-align: center;
@@ -351,8 +350,8 @@ footer a {
   display: none;
   flex-direction: column;
   margin: 1em, 0;
-  box-shadow: 0px 0px 3px 5px #DCE6EC;
-  background-color: #C1D3DC;
+  box-shadow: 0px 0px 0px 5px #ffffff;
+  background-color: #DCE6EC;
 }
 .recipe-card .cocktail-img {
   max-width: 80%;
@@ -366,4 +365,60 @@ footer a {
 }
 .recipe-card .recipe li {
   margin-right: 10px;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  header {
+    top: 100px;
+  }
+  .header-text h1 {
+    margin-top: 0.8em;
+  }
+  .header-text p {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+  .header-section select {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+  .gallery li img {
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 70%;
+  }
+  .recipe-card {
+    margin: 0 auto;
+    margin-top: 4em;
+    width: 50%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1200px) {
+  header {
+    top: 30px;
+  }
+  .header-content {
+    margin-left: 1em;
+  }
+  .header-text h1 {
+    margin-top: 4em;
+  }
+  .header-text p {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+  .header-section select {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+  .gallery li img {
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 60%;
+  }
+  .recipe-card {
+    margin: 0 auto;
+    margin-top: 4em;
+    width: 35%;
+  }
 }
