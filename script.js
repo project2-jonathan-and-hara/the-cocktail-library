@@ -1,13 +1,9 @@
 // create the app object 
 const app = {}
 
-// const ul = document.querySelector('.gallery');
-
 //create the init method to define global variables & capture user interaction with select & button elements 
-
 app.init = () => {
     // third party API with cocktail recipe data used for app
-    // www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
     app.apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php';
     app.apiRecipeUrl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?';
 
@@ -20,15 +16,13 @@ app.init = () => {
     app.recipeCard = document.querySelector('.recipe-card');
 
     app.header = document.querySelector('header');
- 
+
     app.footer = document.querySelector('footer');
-    
+
     // target the select element & use addEventListener to update with the users spirit selection 
     app.userSelection = document.querySelector('select');
-    app.userSelection.addEventListener('click', (e) => {
-    app.spiritName = e.target.innerText;
-        // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
-
+    app.userSelection.addEventListener('change', (e) => {
+        app.spiritName = e.target.selectedOptions[0].innerText;
         e.stopPropagation();
     });
 
@@ -36,35 +30,34 @@ app.init = () => {
     app.cocktailRecipe = document.querySelector('.recipe');
     app.selectReset.selectedIndex = 0;
 
-        app.stirBtn = document.querySelector('.stirBtn');
-        app.stirBtn.addEventListener('click', (e) => {
-        window.scrollTo(0,app.header.clientHeight)
-            app.recipeCard.style.display = 'none';
-            app.header.style.top = '0';
-            app.footer.style.position = 'relative';
-            if (app.spiritName != 'Select') {
-                // reset page for new cocktail selection
-                app.cocktailImg.innerHTML = '';
-                app.cocktailRecipe.innerHTML = '';
-                app.getCocktails();
-            }
-            // target the ul element in the DOM to create a gallery with 6 cocktail options for the user                         
-            app.gallery = document.querySelector('.gallery');
-            //defining a variable to reference the ul with a class of gallery
-            app.ulElement = document.querySelector('.gallery');
+    // target stir button and use addEventListener to capture users choice and display the cocktail options. Also deactivate the select display from the options. 
+    app.stirBtn = document.querySelector('.stirBtn');
+    app.stirBtn.addEventListener('click', (e) => {
+        
+        app.recipeCard.style.display = 'none';``
+        app.header.style.top = '0';
+        app.footer.style.position = 'relative';
+        if (app.spiritName !== 'Select') {
+            // reset page for new cocktail selection
+            // app.cocktailImg.innerHTML = '';
+            // app.cocktailRecipe.innerHTML = '';
+            app.getCocktails();
+        }
+        // target the ul element in the DOM to create a gallery with 6 cocktail options for the user                         
+        app.gallery = document.getElementById('gallery');
+        
+        //defining a variable to reference the ul with a class of gallery
+        app.ulElement = document.querySelector('.gallery');
 
-            e.stopPropagation();
-        })
+        e.stopPropagation();
+    })
 }
 
 
-
-
-
+   
 // declare a getCocketails method & use AJAX method to obtain the cocktails data from the third party API
 
 app.getCocktails = () => {
-    console.log('get cocktails called');
     const url = new URL(app.apiUrl);
     url.search = new URLSearchParams({
         'i': app.spiritName
@@ -74,8 +67,7 @@ app.getCocktails = () => {
             return response.json();
         })
         .then(drinksResult => {
-            // console.log(drinksResult);
-           
+            app.gallery.innerHTML = '';
             app.displayImages(drinksResult);
         })
 }
@@ -83,10 +75,8 @@ app.getCocktails = () => {
 // created a displayImage method to populate an image gallery of cocktails & their names for the users selection
 
 app.displayImages = (drinksArray) => {
-    console.log('display images called');
     // reset the gallery 
-    app.gallery.innerHTML = '';
-
+    // app.gallery.innerHTML = '';
     // use for loop to target the cocktail images & texts from the third party API and display it as a gallery
     for (let i = 0; i <= 5; i++) {
         const listItem = document.createElement('li');
@@ -95,23 +85,26 @@ app.displayImages = (drinksArray) => {
 
         image.src = drinksArray.drinks[i].strDrinkThumb;
         image.alt = drinksArray.drinks[i].strDrink;
-        listItem.id = drinksArray.drinks[i].idDrink;
+        listItem.setAttribute('data-id', drinksArray.drinks[i].idDrink);
 
         text.innerText = drinksArray.drinks[i].strDrink;
 
         listItem.appendChild(image);
         listItem.appendChild(text);
         app.gallery.appendChild(listItem);
-        
+
+       
     };
-        // window.scrollTo(0,app.header.clientHeight)**********
+
+    
+   
 
     // add event listener to the cocktail image for the user to get recipe on a click event
     app.ulElement.childNodes.forEach(liElement => {
         liElement.addEventListener('click', (e) => {
-            let idDrink = liElement.getAttribute('id');
+            let idDrink = liElement.getAttribute('data-id');
             app.getRecipe(idDrink);
-            e.stopPropagation();
+            e.stopImmediatePropagation();
         });
     })
 }
@@ -134,8 +127,7 @@ app.getRecipe = (idDrink) => {
             const image = document.createElement('img');
             image.src = idResult.drinks[0].strDrinkThumb;
             app.cocktailImg.appendChild(image);
-            // console.log(idResult);
-            console.log(idResult.drinks[0]);
+
             const cktlObj = idResult.drinks[0];
             const recipeUl = document.createElement('ul');
             const instructions = document.createElement('p');
@@ -160,7 +152,7 @@ app.getRecipe = (idDrink) => {
         })
 }
 
-                       
+
 
 // call the init method to initiate the app
 app.init();

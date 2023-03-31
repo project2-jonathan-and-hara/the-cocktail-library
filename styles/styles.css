@@ -273,6 +273,7 @@ h1 {
   text-align: center;
   border: 5px solid #ffffff;
   background-color: #DCE6EC;
+  cursor: pointer;
 }
 
 header {
@@ -313,6 +314,7 @@ header {
   font-family: "Hind", sans-serif;
   font-weight: 400;
   background-color: #f5f5f5;
+  cursor: pointer;
 }
 .header-selection .stirBtn:hover {
   background-color: #d8ecba;
