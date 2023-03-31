@@ -7,12 +7,14 @@
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    // min-height: 300px;
+    // border: 2px solid red;
     
     li {
         width: calc(100% / 2 - 8px);
         text-align: center;
-        border: 5px solid #ffffff;
-        background-color:#DCE6EC;
+        border: 5px solid $white-clr;
+        background-color:$imgbkgd-clr;
         cursor: pointer;
     }
 }

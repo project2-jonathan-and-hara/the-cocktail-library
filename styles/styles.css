@@ -305,6 +305,7 @@ header {
 .header-selection select {
   width: 30%;
   font-size: 0.8rem;
+  background-color: #F5F5F5;
 }
 .header-selection button {
   margin-top: 0.5em;
@@ -313,24 +314,23 @@ header {
   width: 20%;
   font-family: "Hind", sans-serif;
   font-weight: 400;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   cursor: pointer;
 }
 .header-selection .stirBtn:hover {
-  background-color: #d8ecba;
+  background-color: #D8ECBA;
 }
 .header-selection .stirBtn:focus-visible {
-  border: 2px solid blue;
+  border: 2px solid #0000ff;
 }
 .header-selection .stirBtn:active {
-  background-color: #acd671;
+  background-color: #ACD671;
   transform: translate(4px);
 }
 .header-selection .spirits {
   font-family: "Hind", sans-serif;
   font-weight: 400;
   text-align: center;
-  background-color: #f5f5f5;
 }
 
 footer {
@@ -371,39 +371,14 @@ footer a {
 
 @media (min-width: 600px) and (max-width: 900px) {
   header {
-    top: 100px;
-  }
-  .header-text h1 {
-    margin-top: 0.8em;
-  }
-  .header-text p {
-    margin-top: 2em;
-    margin-bottom: 3em;
-  }
-  .header-section select {
-    width: 50%;
-    font-size: 0.8rem;
-  }
-  .gallery li img {
-    margin: 0 auto;
-    padding-top: 2em;
-    width: 70%;
-  }
-  .recipe-card {
-    margin: 0 auto;
-    margin-top: 4em;
-    width: 50%;
-  }
-}
-@media (min-width: 900px) and (max-width: 1200px) {
-  header {
-    top: 30px;
+    top: 9em;
   }
   .header-content {
-    margin-left: 1em;
+    margin-left: 4em;
+    padding-left: 0em;
   }
   .header-text h1 {
-    margin-top: 4em;
+    margin-top: 1em;
   }
   .header-text p {
     margin-top: 2em;
@@ -413,14 +388,104 @@ footer a {
     width: 50%;
     font-size: 0.8rem;
   }
+  .gallery {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4em;
+  }
   .gallery li img {
     margin: 0 auto;
     padding-top: 2em;
-    width: 60%;
+    width: 80%;
   }
   .recipe-card {
     margin: 0 auto;
     margin-top: 4em;
-    width: 35%;
+    width: 50%;
+  }
+  .recipe-card .cocktail-img {
+    width: 65%;
+  }
+  .recipe-card .recipe {
+    width: 65%;
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  header {
+    top: 6em;
+    box-shadow: none;
+  }
+  .header-img {
+    width: 80%;
+    box-shadow: 0px 0px 0px 5px #ffffff;
+    margin: 0 auto;
+  }
+  .header-content {
+    margin-left: 7.5em;
+    padding-left: 0em;
+  }
+  .header-text h1 {
+    margin-top: 1.5em;
+  }
+  .header-text p {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+  .header-section select {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+  .gallery {
+    width: 80%;
+    margin: 4em auto;
+  }
+  .gallery li img {
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 65%;
+  }
+  .recipe-card {
+    margin: 0 auto;
+    margin-top: 4em;
+    width: 30%;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1280px) {
+  header {
+    top: 5em;
+    box-shadow: none;
+  }
+  .header-img {
+    width: 80%;
+    box-shadow: 0px 0px 0px 5px #ffffff;
+    margin: 0 auto;
+  }
+  .header-content {
+    margin-left: 8em;
+  }
+  .header-text h1 {
+    margin-top: 2em;
+  }
+  .header-text p {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+  .header-section select {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+  .gallery {
+    width: 80%;
+    margin: 4em auto;
+  }
+  .gallery li img {
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 65%;
+  }
+  .recipe-card {
+    margin: 0 auto;
+    margin-top: 4em;
+    width: 30%;
   }
 }
