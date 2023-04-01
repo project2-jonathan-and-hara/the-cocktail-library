@@ -93,6 +93,7 @@ app.displayImages = (drinksArray) => {
         listItem.appendChild(image);
         listItem.appendChild(text);
         app.gallery.appendChild(listItem);
+        app.gallery.scrollIntoView();
     };
 
     // addEventListener to the cocktail image for the user to get recipe on a click event
@@ -162,6 +163,7 @@ app.getRecipe = (idDrink) => {
             }
             app.cocktailRecipe.appendChild(recipeUl);
             app.cocktailRecipe.appendChild(instructions);
+            app.cocktailRecipe.scrollIntoView();
         })
         .catch((error)=> {
           error = "We're having trouble mixing your cocktail, please come back later!";
