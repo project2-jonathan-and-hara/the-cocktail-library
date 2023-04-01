@@ -40,9 +40,9 @@ app.init = () => {
     app.stirBtn = document.querySelector('.stirBtn');
     app.stirBtn.addEventListener('click', (e) => {
         app.recipeCard.style.display = 'none';
-        app.header.style.top = '0';
         app.footer.style.position = 'relative';
-        if (app.spiritName !== 'Select') {
+        if (app.spiritName !== 'Select' && app.spiritName !== undefined) {
+            app.header.style.top = '0';
             app.getCocktails();
         }
         e.stopPropagation();
@@ -85,6 +85,8 @@ app.displayImages = (drinksArray) => {
         image.src = drinksArray.drinks[i].strDrinkThumb;
         image.alt = drinksArray.drinks[i].strDrink;
         listItem.setAttribute('data-id', drinksArray.drinks[i].idDrink);
+        // to make the listItem in the gallery tabbable
+        listItem.setAttribute("tabindex",'0');
 
         text.innerText = drinksArray.drinks[i].strDrink;
 
@@ -99,6 +101,13 @@ app.displayImages = (drinksArray) => {
             let idDrink = liElement.getAttribute('data-id');
             app.getRecipe(idDrink);
             e.stopImmediatePropagation();
+        });
+        // allow user to use the enter key on the tabbable gallery to get recipe
+        liElement.addEventListener("keyup", (event) => {
+            let idDrink = liElement.getAttribute('data-id');
+            if (event.keyCode === 13) {
+                app.getRecipe(idDrink);
+            }
         });
     })
 }

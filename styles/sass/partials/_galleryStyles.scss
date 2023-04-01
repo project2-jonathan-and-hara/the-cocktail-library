@@ -6,10 +6,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
-    // min-height: 300px;
-    // border: 2px solid red;
-    
+    flex-wrap: wrap;   
     li {
         width: calc(100% / 2 - 8px);
         text-align: center;
