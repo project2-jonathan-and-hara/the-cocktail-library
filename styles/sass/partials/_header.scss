@@ -2,7 +2,7 @@
 
 header{
     position: relative;
-    top: 200px;
+    top: 12.5em;
     box-shadow: 0px 0px 0px 5px $white-clr;
 }
 
@@ -25,13 +25,11 @@ header{
 .header-selection{
     display:flex;
     flex-direction: column;
-
     select{
         width: 30%;
         font-size:.8rem;
         background-color: $btn-clr;
     }
-
     button{
         margin-top:.5em;
         padding-top: .2em;
@@ -42,20 +40,16 @@ header{
         background-color:$btn-clr;
         cursor: pointer;
     }
-
     .stirBtn:hover{
         background-color:$hover-clr;
     }
-
     .stirBtn:focus-visible{
         border: 2px solid #0000ff;
     }
-
     .stirBtn:active{
         background-color:$btnbkgd-clr;
         transform: translate(4px);
     }
-
     .spirits {
         font-family: $primary-font;
         font-weight: 400;

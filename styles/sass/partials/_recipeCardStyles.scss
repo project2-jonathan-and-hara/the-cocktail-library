@@ -3,14 +3,14 @@
 .recipe-card {
     display: none;
     flex-direction: column;
-    margin: 1em, 0;
+    margin:1em, 0;
     box-shadow: 0px 0px 0px 5px $white-clr;
     background-color:$imgbkgd-clr;
 
     .cocktail-img {
         max-width: 80%;
         align-self: center;
-        margin-bottom: 20px;
+        margin-bottom: 1.25em;
         padding-top: 1.5em;
     }
 
