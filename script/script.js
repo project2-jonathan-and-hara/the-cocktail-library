@@ -18,21 +18,25 @@ app.init = () => {
 
     app.footer = document.querySelector('footer');
 
-    // target the select element & use addEventListener to update with the users spirit selection 
-    app.userSelection = document.querySelector('select');
-    app.userSelection.addEventListener('change', (e) => {
-        app.spiritName = e.target.selectedOptions[0].innerText;
-        e.stopPropagation();
-    });
-
     app.cocktailImg = document.querySelector('.cocktail-img');
 
     app.cocktailRecipe = document.querySelector('.recipe');
 
+    app.userSelection = document.querySelector('select');
+
+    // define a variable to target the div with class of gallery                      
+    app.gallery = document.getElementById('gallery');
+
+    // target the select element & use addEventListener to update with the users spirit selection 
+    app.userSelection.addEventListener('change', (e) => {
+        app.spiritName = e.target.selectedOptions[0].innerText;
+        e.stopPropagation();
+    });
+    // on browser refresh reset drop down to 'select'
     app.selectReset.selectedIndex = 0;
 
-    // target stir button and use addEventListener to capture users choice and display the cocktail options. 
-    // also deactivate 'select' as an option  from the drop down  
+    // target stir button and use addEventListener to capture users preferred spirit and display the cocktail options
+    // also prevent the select title from being an option 
     app.stirBtn = document.querySelector('.stirBtn');
     app.stirBtn.addEventListener('click', (e) => {
         app.recipeCard.style.display = 'none';
@@ -41,13 +45,6 @@ app.init = () => {
         if (app.spiritName !== 'Select') {
             app.getCocktails();
         }
-
-        //defining a variable to reference the ul with a class of gallery
-        app.ulElement = document.querySelector('.gallery');
-
-        // target the ul element in the DOM to create a gallery with 6 cocktail options for the user                         
-        app.gallery = document.getElementById('gallery');
-        
         e.stopPropagation();
     })
 }
@@ -60,11 +57,19 @@ app.getCocktails = () => {
     });
     fetch(url)
         .then(response => {
+          if(response.ok){
             return response.json();
+          } else {
+            throw new Error("We're having trouble mixing your cocktail,please come back later!");
+          }
         })
         .then(drinksResult => {
             app.gallery.innerHTML = '';
             app.displayImages(drinksResult);
+        })
+        .catch((error)=> {
+          error = "We're having trouble mixing your cocktail, please come back later!";
+          alert(error);
         })
 }
 
@@ -86,15 +91,10 @@ app.displayImages = (drinksArray) => {
         listItem.appendChild(image);
         listItem.appendChild(text);
         app.gallery.appendChild(listItem);
-        app.gallery.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "nearest"
-        });
     };
 
     // addEventListener to the cocktail image for the user to get recipe on a click event
-    app.ulElement.childNodes.forEach(liElement => {
+    app.gallery.childNodes.forEach(liElement => {
         liElement.addEventListener('click', (e) => {
             let idDrink = liElement.getAttribute('data-id');
             app.getRecipe(idDrink);
@@ -105,10 +105,9 @@ app.displayImages = (drinksArray) => {
 
 // declaring app.getRecipe method to fetch the cocktail recipe for the user
 app.getRecipe = (idDrink) => {
-    // reset the selected cocktail
+    // reset the selected cocktail img & recipe 
     app.cocktailImg.innerHTML = '';
     app.cocktailRecipe.innerHTML = '';
-
     app.recipeCard.style.display = 'flex';
 
     const url = new URL(app.apiRecipeUrl);
@@ -118,8 +117,12 @@ app.getRecipe = (idDrink) => {
 
     fetch(url)
         .then(response => {
-            return response.json()
-        })
+          if(response.ok){
+            return response.json();
+          } else{
+            throw new Error("We're having trouble mixing your cocktail,please come back later!");
+          }
+        }) 
         .then(idResult => {
             // define a variable for the image, get the image and add it to the cocktail image div 
             const image = document.createElement('img');
@@ -130,6 +133,7 @@ app.getRecipe = (idDrink) => {
             const cktlObj = idResult.drinks[0];
             const recipeUl = document.createElement('ul');
             const instructions = document.createElement('p');
+            // set the inner text for the p element 
             instructions.innerText = cktlObj['strInstructions']
 
             // create a for loop to iterate over the object and print the ingredients, measurements and instructions
@@ -150,6 +154,10 @@ app.getRecipe = (idDrink) => {
             app.cocktailRecipe.appendChild(recipeUl);
             app.cocktailRecipe.appendChild(instructions);
         })
+        .catch((error)=> {
+          error = "We're having trouble mixing your cocktail, please come back later!";
+          alert(error);      
+})
 }
 
 // call the init method to initiate the app
