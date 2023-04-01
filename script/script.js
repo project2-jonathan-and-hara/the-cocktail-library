@@ -40,8 +40,8 @@ app.init = () => {
     app.stirBtn = document.querySelector('.stirBtn');
     app.stirBtn.addEventListener('click', (e) => {
         app.recipeCard.style.display = 'none';
-        app.footer.style.position = 'relative';
         if (app.spiritName !== 'Select' && app.spiritName !== undefined) {
+            app.footer.style.position = 'relative';
             app.header.style.top = '0';
             app.getCocktails();
         }
