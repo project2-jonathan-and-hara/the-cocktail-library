@@ -1,81 +1,48 @@
 @use 'variables' as *;
 
-@media (min-width:600px) and (max-width:900px){
-
-header{
-    top: 100px;
-}
-
-.header-text {
-    h1 {
-        margin-top: 0.8em;
-    }
-    p {
-        margin-top: 2em;
-        margin-bottom: 3em;
-    }
-}
-
-.header-section{
-    select{
-        width: 50%;
-        font-size:.8rem;
-    }
-}
-
-.gallery li img{
-    margin: 0 auto;
-    padding-top: 2em;
-    width: 70%;
-}
-
-.recipe-card{
-    margin: 0 auto;
-    margin-top: 4em;
-    width: 50%;
-}
-}
-
-@media (min-width:900px) and (max-width:1200px){
-    
+@media (min-width:600px) and (max-width:1100px){
 header {
-    top: 30px;
-}
+        top: 6.25em;
+    }
 
-.header-content{
-    margin-left: 1em;
-}
+    .header-text {
+        h1 {
+            margin-top: 0.8em;
+        }
 
-.header-text {
-h1 {
-    margin-top: 4em;
-}
-p {
-    margin-top: 2em;
-    margin-bottom: 3em;
-}
-}
+        p {
+            margin-top: 2em;
+            margin-bottom: 3em;
+        }
+    }
 
-.header-section{
-    select{
+    .header-section {
+        select {
+            width: 50%;
+            font-size: .8rem;
+        }
+    }
+
+    .gallery li img {
+        margin: 0 auto;
+        padding-top: 2em;
+        width: 70%;
+    }
+
+    .recipe-card {
+        margin: 0 auto;
+        margin-top: 4em;
         width: 50%;
-        font-size:.8rem;
     }
 }
 
-.gallery li img{
-    margin: 0 auto;
-    padding-top: 2em;
-    width: 60%;
+@media (max-width:1101){
+    .recipe{
+        max-width: 80%;
+        align-self: center;
+    }
 }
 
-.recipe-card{
-    margin: 0 auto;
-    margin-top: 4em;
-    width: 35%;
-}
-}
 
-@media (min-width:1200px) and (max-width:1280px){
 
-}
+
