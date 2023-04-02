@@ -95,10 +95,10 @@ app.displayImages = (drinksArray) => {
 
         listItem.appendChild(image);
         listItem.appendChild(text);
-        app.gallery.appendChild(listItem);
-        app.gallery.scrollIntoView();
+        app.gallery.appendChild(listItem);   
     };
-
+    app.gallery.scrollIntoView();
+    
     // addEventListener to the cocktail image for the user to get recipe on a click event
     app.gallery.childNodes.forEach(liElement => {
         liElement.addEventListener('click', (e) => {
