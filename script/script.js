@@ -24,6 +24,8 @@ app.init = () => {
 
     app.userSelection = document.querySelector('select');
 
+    app.anchorToTop = document.querySelector('.anchor-toTop');
+
     // define a variable to target the div with class of gallery                      
     app.gallery = document.getElementById('gallery');
 
@@ -71,6 +73,7 @@ app.getCocktails = () => {
           error = "We're having trouble mixing your cocktail, please come back later!";
           alert(error);
         })
+     app.anchorToTop.style.display = 'block';
 }
 
 // created a displayImages method to populate an image gallery of cocktails & their names for the users selection
