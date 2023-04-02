@@ -1,0 +1,50 @@
+@use 'variables' as *;
+
+html{
+    font-size: 125%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+.wrapper{
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.anchor-toTop {
+    display: none;
+    a {
+        display: block;
+        text-decoration: none;
+        color: $blk-clr;
+        background-color: $white-clr;
+        font-family: $secondary-font;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 2em;
+        padding: 0.3em;
+        width: 7em;
+        border: 2px solid #c1d3dc;
+    }
+
+    a:hover {
+        background-color: $hover-clr;
+    }
+    a:acitive {
+        transform: translate(4px);
+    }
+    a:focus-visible {
+        border: 2px solid #0000ff;
+    }
+}

@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+body{
+        font-family:$primary-font;
+        font-weight: 500;
+        font-size: 0.8rem;
+        background-color: $bkgd-clr;
+        height: 100vh;
+}
+
+h1{
+    font-family:$secondary-font;
+    font-size: clamp(1.2rem, -0.7143rem + 8.5714vw, 2.5rem);
+    font-weight:600;
+    margin: 0;
+}
+
+
+
+
+
+
+
+

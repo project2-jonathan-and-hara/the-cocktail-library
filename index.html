@@ -1,1 +1,55 @@
-this is index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project API</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2
+    family=Hind:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,=">
+</head>
+<body>
+    <header class="wrapper" id = "header">
+        <div class="header-img"><img src="./assets/pexels-karolina-grabowska-4021976.jpg" alt="cocktail glass filled with clear spirit with lemons and mint leaves">
+        </div>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>The Cocktail Library</h1>
+                <p>Select a spirit and click stir for the recipe!</p>
+            </div>
+            <div class="header-selection">
+                <label for="spirits" ></label>
+                <select name="spirit-selection" id="spirits" class = "spirits">
+                    <option value=""selected>Select</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="gin">Gin</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="rum">Rum</option>
+                </select>
+                <button class="stirBtn">Stir!</button>
+            </div>
+        </div>
+    </header>   
+    <main class="wrapper">
+        <ul id="gallery" class="gallery">
+        </ul>
+        <div class="recipe-card">
+            <div class="cocktail-img">
+            </div>
+            <div class="recipe">
+            </div>
+        </div>
+        <div class="anchor-toTop">
+            <a href = #header>Back to Top </a>
+        </div>
+    </main> 
+    <footer>
+        <a href="https://junocollege.com/" target="_blank">Created at Juno College</a>
+    </footer>           
+<script src='./script/script.js'></script> 
+</body>
+</html>

@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.gallery {
+    margin-top: 2em;
+    margin-bottom:2em;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;   
+    li {
+        width: calc(100% / 2 - 8px);
+        text-align: center;
+        border: 5px solid $white-clr;
+        background-color:$imgbkgd-clr;
+        cursor: pointer;
+    }
+}
+
+
+
+
