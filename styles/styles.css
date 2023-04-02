@@ -245,6 +245,32 @@ ul {
   list-style: none;
 }
 
+.anchor-toTop {
+  display: none;
+}
+.anchor-toTop a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2em;
+  padding: 0.3em;
+  width: 7em;
+  border: 2px solid #c1d3dc;
+}
+.anchor-toTop a:hover {
+  background-color: #D8ECBA;
+}
+.anchor-toTop a:acitive {
+  transform: translate(4px);
+}
+.anchor-toTop a:focus-visible {
+  border: 2px solid #0000ff;
+}
+
 body {
   font-family: "Hind", sans-serif;
   font-weight: 500;
