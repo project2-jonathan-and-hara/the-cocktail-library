@@ -73,12 +73,15 @@ app.getCocktails = () => {
           error = "We're having trouble mixing your cocktail, please come back later!";
           alert(error);
         })
+        
+    setTimeout(()=>{
+        app.gallery.scrollIntoView();
+    },200);
      app.anchorToTop.style.display = 'block';
 }
 
 // created a displayImages method to populate an image gallery of cocktails & their names for the users selection
 app.displayImages = (drinksArray) => {
-
     // use for loop to target the cocktail images & texts from the third party API and display it as a gallery
     for (let i = 0; i <= 5; i++) {
         const listItem = document.createElement('li');
