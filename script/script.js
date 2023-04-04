@@ -73,10 +73,13 @@ app.getCocktails = () => {
           error = "We're having trouble mixing your cocktail, please come back later!";
           alert(error);
         })
+        .finally(()=>{
+            app.gallery.scrollIntoView();
+        })
         
     setTimeout(()=>{
         app.gallery.scrollIntoView();
-    },250);
+    },300);
      app.anchorToTop.style.display = 'block';
 }
 
