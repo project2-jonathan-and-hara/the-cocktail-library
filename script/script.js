@@ -76,7 +76,7 @@ app.getCocktails = () => {
         
     setTimeout(()=>{
         app.gallery.scrollIntoView();
-    },200);
+    },250);
      app.anchorToTop.style.display = 'block';
 }
 
